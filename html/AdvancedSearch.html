@@ -1,28 +1,28 @@
-<!doctype html>
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-</head>
+    <head>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+        <title>Advanced Search</title>
+    </head>
 
 
 <body>
 
 <!-- #### Navigartions Bar #### -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light border sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="./Home.html">Home</a>
+        <a class="navbar-brand" href="./home.xhtml">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./createSeries.xhtml">Serie erstellen</a>
+                </li>
             </ul>
             <form class="d-flex" method="get" action="../index.html">
                 <button class="btn btn-outline-success" type="submit">log out</button>
@@ -33,46 +33,46 @@
 
 <!-- Search -->
 <div class="container py-5">
-    <form class="row g-3">
+    <h1 class="display-1">Erweiterte Suche</h1>
+    <form styleClass="row g-3">
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Username</label>
-            <input type="email" class="form-control" id="inputEmail4">
+            <input type="text" class="form-control" id="inputEmail4"></input>
         </div>
         <div class="col-md-6">
             <label for="inputGenre" class="form-label">Genre</label>
-            <select id="inputGenre" class="form-select">
-                <option selected>Choose...</option>
-                <option>Action</option>
-                <option>Drama</option>
-                <option>Comedie</option>
-            </select>
+            <selectOneMenu value="#{searchBean.genre}" id="inptGenre" styleClass="form-select" >
+                <selectItem itemValue="Action" itemLabel="Action"/>
+                <selectItem itemValue="Drama" itemLabel="Drama"/>
+                <selectItem itemValue="Comedy" itemLabel="Comedie"/>
+            </selectOneMenu>
         </div>
 
         <div class="col-md-6">
             <label for="inputPlattform" class="form-label">Plattform</label>
-            <select id="inputPlattform" class="form-select">
-                <option selected>Choose...</option>
-                <option>Netflix</option>
-                <option>Amazon Prime</option>
-                <option>Disney Plus</option>
-                <option>Sky</option>
-            </select>
+            <selectOneMenu value="#{searchBean.streamingProvider}" id="inputPlattform" styleClass="form-select" >
+                <selectItem itemValue="Netflix" itemLabel="Netflix"/>
+                <selectItem itemValue="AmazonPrime" itemLabel="Amazon Prime"/>
+                <selectItem itemValue="DisneyPlus" itemLabel="Disney Plus"/>
+                <selectItem itemValue="Sky" itemLabel="Sky"/>
+            </selectOneMenu>
         </div>
 
         <div class="col-md-6">
             <label for="inputScore" class="form-label">Score</label>
-            <select id="inputScore" class="form-select">
-                <option selected>Choose...</option>
-                <option>bad</option>
-                <option>medicore</option>
-                <option>good</option>
-                <option>very good</option>
-                <option>amazing</option>
-            </select>
+            <selectOneMenu value="#{searchBean.score}" id="inputScore" styleClass="form-select">
+                <selectItem itemValue="bad" itemLabel="bad"/>
+                <selectItem itemValue="mediocre" itemLabel="medicore"/>
+                <selectItem itemValue="good" itemLabel="good"/>
+                <selectItem itemValue="very good" itemLabel="very good"/>
+                <selectItem itemValue="amazing" itemLabel="amazing"/>
+            </selectOneMenu>
         </div>
 
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Search</button>
+            <commandButton value = "Search"
+                             action= "#{searchBean.searchSerie(loginBean.username)}"
+                             styleClass="btn btn-primary"/>
         </div>
     </form>
 </div>
@@ -82,4 +82,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
+    
 </html>
