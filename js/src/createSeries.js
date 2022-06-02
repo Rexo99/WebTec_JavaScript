@@ -39,7 +39,7 @@ function checkInput(){
     document.getElementById("createButton").disabled = false;
     document.getElementById("errorText").innerHTML = "";
     let seasons = document.getElementById("seriesSeasons").value;
-    if (isNaN(seasons)) {
+    if (!seasons || isNaN(seasons)) {
         document.getElementById("createButton").disabled = true;
         document.getElementById("errorText").innerHTML += "Staffeln muss eine Zahl sein.<br>"
     } 
@@ -49,4 +49,21 @@ function checkInput(){
         document.getElementById("createButton").disabled = true;
         document.getElementById("errorText").innerHTML += "Bitte einen Titel eingeben."
     }
+}
+
+checkInput();
+
+
+function test(){
+    const para = document.createElement("p");
+    const node = document.createTextNode("This is new.");
+    para.appendChild(node);
+    const noText = document.createElement("div");
+    const notexttext = document.createTextNode("anoother text");
+    noText.appendChild(notexttext);
+    para.appendChild(noText);
+
+    const element = document.getElementById("test");
+    const child = document.getElementById("endTest");
+    element.insertBefore(para,child);
 }
