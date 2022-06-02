@@ -1,7 +1,7 @@
 
 
 function serachSerie(user){
-
+    console.log(user);
     // Unfortunately, I do not know how this works with the registration.
     let url = 'http://localhost:8080/steam/api/serien/' + user + '/search';
 
@@ -15,8 +15,6 @@ function serachSerie(user){
         //,"provider": plattform
         //,"Score": score
     };
-
-    document.getElementById("answer").innerHTML = "Es klappt";
 
     console.log(search);
 

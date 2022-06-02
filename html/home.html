@@ -49,10 +49,8 @@
                                 <h5 class="card-text">Rated: #{manageSeries.getRated(s, loginBean.username)}</h5>
                                 <h5 class="card-text">Remark: #{manageSeries.getRemark(s, loginBean.username)}</h5>
                             </div>
-                            <form styleClass="container col-3">
-                                <h:commandButton value ="Edit" action= "#{manageSeries.edit(s)}" styleClass="btn btn-primary container"/>
-                                <h:commandButton value="Rate" action="#{createRatingBean.setRating(loginBean.username,s)}" styleClass="btn btn-primary container py-2"/>
-                            </form>
+                            <button onclick= "" class="btn btn-primary container">Edit</button>
+                            <button onclick="" class="btn btn-primary container">Rate</button>
                         </div>
                     </a>
                 </div>
