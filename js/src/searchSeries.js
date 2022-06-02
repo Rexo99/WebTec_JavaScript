@@ -26,16 +26,16 @@ function serachSerie(user){
         method: 'post',
         headers: {
             "Accept":"application/json",
-            "Content-Type":"application/json",
-            "Access-Control-Allow-Origin": "*"
+            "Content-Type":"application/json"
+            // "Access-Control-Allow-Origin": "*"
         },
         body:
             JSON.stringify(search)
     })
         .then(response => response.json())
         .then(data => {
-            //console.log('REST answer: ' +  data) ;
-            document.getElementById("answer").innerHTML = 'REST answer: ' + data;
+            console.log('REST answer: ' +  data) ;
+            //document.getElementById("answer").innerHTML = 'REST answer: ' + data;
         })
         .catch(
             err => document.getElementById("answer").innerHTML = 'Fetch error ' + err
