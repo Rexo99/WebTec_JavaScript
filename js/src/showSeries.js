@@ -1,6 +1,7 @@
 
 function showSeries(serien){
-    document.getElementById("test").innerHTML = "Hallöchen";
+
+    // document.getElementById("test").innerHTML = "Hallöchen";
     serien.forEach(serie => {
         let title = serie.title;
         let genre = serie.genre;
@@ -50,7 +51,7 @@ function showSeries(serien){
         const hide = document.getElementById("hide");
         const element = document.getElementById("tableSerien");
         element.insertBefore(thead, hide);
-
     })
+
 }
 

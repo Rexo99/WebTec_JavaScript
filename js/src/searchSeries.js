@@ -1,7 +1,7 @@
 
 
 function serachSerie(user){
-
+    console.log(user);
     // Unfortunately, I do not know how this works with the registration.
     let url = 'http://localhost:8080/steam/api/serien/' + user + '/search';
 
@@ -15,8 +15,6 @@ function serachSerie(user){
         //,"provider": plattform
         //,"Score": score
     };
-
-    document.getElementById("answer").innerHTML = "Es klappt";
 
     console.log(search);
 
@@ -34,9 +32,15 @@ function serachSerie(user){
     })
         .then(response => response.json())
         .then(data => {
-            // window.location.assign('searchResult.html');
-            showSeries(data);
-            //document.getElementById("answer").innerHTML = 'REST answer: ' + data[0].title;
+
+            // check if data is empty
+            if(data.length < 1){
+                window.alert("Keine Serien gefunden");
+            } else {
+                window.location.assign('../../html/searchResult.html')
+                showSeries(data);
+            }
+
         })
         .catch(
             err => document.getElementById("answer").innerHTML = 'Fetch error ' + err
