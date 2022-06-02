@@ -34,8 +34,8 @@ function serachSerie(user){
     })
         .then(response => response.json())
         .then(data => {
-            console.log('REST answer: ' +  data) ;
-            //document.getElementById("answer").innerHTML = 'REST answer: ' + data;
+            //console.log('REST answer: ' +  data) ;
+            document.getElementById("answer").innerHTML = 'REST answer: ' + data[0].title;
         })
         .catch(
             err => document.getElementById("answer").innerHTML = 'Fetch error ' + err
