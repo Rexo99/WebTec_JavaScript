@@ -26,8 +26,7 @@ function createSeries(){
         })
         .then(response => response.text())
         .then(data => {
-            document.getElementById("response").innerHTML = data;
+            window.location.assign("home.html");
         })
         .catch(err => console.error(err));
-    document.getElementById("outputText").innerHTML = serie.title + "<br>" + serie.genre + "<br>" + serie.streamedBy + "<br>" + serie.numberOfSeasons;
 }
