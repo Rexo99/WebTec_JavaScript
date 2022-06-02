@@ -1,23 +1,45 @@
 
 
-function serachSerie(user, serienname){
-    url = user + '/searchByName/' + serienname;
-    serie = document.getElementById("serienname").value;
+function serachSerie(user){
+
+    // Unfortunately, I do not know how this works with the registration.
+    let url = 'http://localhost:8080/steam/api/serien/' + user + '/search';
+
+    let username = document.getElementById("username").value;
+    let genre = document.getElementById('inputGenre').value;
+    let plattform = document.getElementById('inputPlattform').value;
+    let score = document.getElementById('inputScore').value;
+
+    let search = {"username" : user,
+        "genre": genre
+        //,"provider": plattform
+        //,"Score": score
+    };
+
+    document.getElementById("answer").innerHTML = "Es klappt";
+
+    console.log(search);
+
+
+    // Try to connect to the REST-interface
     fetch(url, {
-        headers: { // ich weiß leider nicht mehr was wir im header angeben müssen, damit wir eine json datei zurcü bekommen
-
+        method: 'post',
+        headers: {
+            "Accept":"application/json",
+            "Content-Type":"application/json",
+            "Access-Control-Allow-Origin": "*"
         },
-        body: {
-
-        },
-        method: 'post'
+        body:
+            JSON.stringify(search)
     })
-        .then(status)
-        .then(response => response.text())
+        .then(response => response.json())
         .then(data => {
-            document.getElementById("answer").innerHTML
-                    = 'REST answer: ' + data;
+            //console.log('REST answer: ' +  data) ;
+            document.getElementById("answer").innerHTML = 'REST answer: ' + data;
         })
-        .catch(err => document.getElementById("answer").innerHTML
-                    = 'Fetch error ' + err);
+        .catch(
+            err => document.getElementById("answer").innerHTML = 'Fetch error ' + err
+        );
 }
+
+
