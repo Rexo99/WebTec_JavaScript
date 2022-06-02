@@ -36,7 +36,7 @@
 
         
         <!-- all Series -->
-        <dataTable value="#{showSerienBean.getAllSeries(loginBean.username)}" var="s" class="container col-8 py-5">
+        <!--dataTable value="#{showSerienBean.getAllSeries(loginBean.username)}" var="s" class="container col-8 py-5">
             <column>
                 <div class="py-2">
                     <a href="#" class="text-decoration-none text-black">
@@ -58,7 +58,11 @@
                 </div>
             </column>
 
-        </dataTable>
+        </dataTable-->
+
+    <dataTable id="tableSerien" onload="showSeries(getStoredSeries())">
+        <div id="hide"></div>
+    </dataTable>
         
    
         
