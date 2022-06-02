@@ -34,7 +34,7 @@
                 
                 <div class="col-md-6">
                     <label for="seriesTitle" class="form-label">Titel</label>
-                    <input type="text" id="seriesTitle" class="form-control" required="true"/>
+                    <input type="text" id="seriesTitle" onblur="checkInput()" class="form-control" required="true"/>
                 </div>
 
                 <div class="col-md-6">
@@ -58,19 +58,16 @@
 
                 <div class="col-md-6">
                     <label for="seriesSeasons" class="form-label">Staffeln</label>
-                    <input type="text" id="seriesSeasons" class="form-control" required="true"/>
+                    <input type="text" id="seriesSeasons" onblur="checkInput()" class="form-control" required="true"/>
                 </div>
 
                 <div class="col-12 py-3">
-                    <button type="button" onclick="createSeries()" class="btn btn-outline-success">Create</button>
+                    <button type="button" onclick="createSeries()" id="createButton" class="btn btn-outline-success">Create</button>
+                </div>
+                <div id="errorText" class="col-md-6">
+        
                 </div>
             </form>
-        </div>
-        <div id="response" class="col-md-12">
-            
-        </div>
-        <div id="outputText" class="col-md-6">
-
         </div>
     </body>
     <script src="../js/src/createSeries.js"></script>
