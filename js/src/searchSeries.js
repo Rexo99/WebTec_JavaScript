@@ -42,7 +42,8 @@ function serachSerie(user){
 }
 
 
-function showAllSeriesOfUserWithRating(user){
+function showAllSeriesOfUserWithRating(){
+    let user = window.sessionStorage.getItem("username");
     let url = "http://localhost:8080/steam/api/serien/" + user;
     let seriesData;
 

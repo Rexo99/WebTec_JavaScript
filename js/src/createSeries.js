@@ -1,7 +1,9 @@
 /*
  * creates a series with given inputs.
  */
-function createSeries(user){
+function createSeries(){
+    let user = window.sessionStorage.getItem("username");
+
     let title = document.getElementById("seriesTitle").value;
     let genre = document.getElementById("inputGenre").value;
     let plattform = document.getElementById("inputPlattform").value;
