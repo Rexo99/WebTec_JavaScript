@@ -33,31 +33,30 @@
 
         <div class="container py-5 col-5">
             <h1 class="display-4"> Register </h1>
-            <form method="post" action="Home.html">
+            <form method="post">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">
+                    <label for="inputUsername" class="form-label">
                         Username
                     </label>
                     <input
                         type="text" name="username"
                         required="true"
-                        class="form-control" id="exampleInputEmail1"
+                        class="form-control" id="inputUsername"
                     />
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">
+                    <label for="inputPassword" class="form-label">
                         Password
                     </label>
                     <input
                         type="password" name="password"
                         required="true" 
-                        class="form-control" id="exampleInputPassword1" 
+                        class="form-control" id="inputPassword" 
                     />
                 </div>
-                <button type="submit" class="btn btn-primary"> sign up </button>
-                <!-- <h:commandButton id="registerButton" value="Sign up" styleClass="btn btn-primary" 
-                    action="#{registerBean.register()}"
-                    /> -->
+                <button onclick="register()" type="button" class="btn btn-primary"> sign up </button>
+                <span id="output"></span>
+                <script src="../js/src/account.js"></script>
             </form>
         </div>
     
