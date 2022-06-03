@@ -1,7 +1,7 @@
 /*
  * creates a series with given inputs.
  */
-function createSeries(){
+function createSeries(user){
     let title = document.getElementById("seriesTitle").value;
     let genre = document.getElementById("inputGenre").value;
     let plattform = document.getElementById("inputPlattform").value;
@@ -16,7 +16,7 @@ function createSeries(){
         "streamedBy": plattform,
         "title": title
     }
-    let url = "http://localhost:8080/steam/api/serien/Luca/create_Series";
+    let url = "http://localhost:8080/steam/api/serien/" + user + "/create_Series";
 
     fetch(url,{
             method: 'post',

@@ -32,7 +32,7 @@ function serachSerie(user){
     })
         .then(response => response.json())
         .then(data => {
-            window.location.assign('searchResult.html');
+            //window.location.assign('searchResult.html');
             showSeries(data);
             //document.getElementById("answer").innerHTML = 'REST answer: ' + data[0].title;
         })
@@ -42,3 +42,43 @@ function serachSerie(user){
 }
 
 
+function showAllSeriesOfUserWithRating(user){
+    let url = "http://localhost:8080/steam/api/serien/" + user;
+    let seriesData;
+
+    fetch(url, {
+        method: "get",
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            let score =0;
+            let ratings = [];
+            data.forEach(element => {
+                console.log("Suche Rating für: " + element.title);
+                let ratingUrl = "http://localhost:8080/steam/api/serien/" + user + "/" + element.title + "/rating";
+                fetch(ratingUrl,{
+                    method: "get",
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                })
+                    .then(response => response.json())
+                    .then(ratingData => {
+                        if (ratingData.length == 1){
+                            console.log("befuelle ratings");
+                            ratings.push(ratingData[0]);
+                        }
+                        score++;
+                        if (score == data.length){
+                            console.log("ratings befuellt: " + ratings.length);
+                            showSeries(data,ratings);
+                        }
+                    })
+                    .catch(error => console.log(error));
+            });
+        })
+        .catch(error => console.log(error));
+}

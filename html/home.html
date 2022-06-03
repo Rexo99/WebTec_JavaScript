@@ -21,10 +21,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./AdvancedSearch.xhtml">Erweiterte Suche</a>
+                            <a class="nav-link active" aria-current="page" href="./AdvancedSearch.html">Erweiterte Suche</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./createSeries.xhtml">Serie erstellen</a>
+                            <a class="nav-link active" aria-current="page" href="./createSerie.html">Serie erstellen</a>
                         </li>
                     </ul>
                     <form class="d-flex" method="get" action="../index.html">
@@ -34,37 +34,18 @@
             </div>
         </nav>
 
-        
-        <!-- all Series -->
-        <!--dataTable value="#{showSerienBean.getAllSeries(loginBean.username)}" var="s" class="container col-8 py-5">
-            <column>
-                <div class="py-2">
-                    <a href="#" class="text-decoration-none text-black">
-                        <div class="card">
-                            <h5 class="card-header">#{s.title}</h5>
-                            <div class="card-body">
-                                <h5 class="card-text">Genre: #{s.genre}</h5>
-                                <h5 class="card-text">Seasons: #{s.numberOfSeasons}</h5>
-                                <h5 class="card-text">Streamed By: #{s.streamedBy}</h5>
-                                <h5 class="card-text">Rated: #{manageSeries.getRated(s, loginBean.username)}</h5>
-                                <h5 class="card-text">Remark: #{manageSeries.getRemark(s, loginBean.username)}</h5>
-                            </div>
-                            <button onclick= "" class="btn btn-primary container">Edit</button>
-                            <button onclick="" class="btn btn-primary container">Rate</button>
-                        </div>
-                    </a>
-                </div>
-            </column>
-
-        </dataTable-->
-
-    <dataTable id="tableSerien" onload="showSeries(getStoredSeries())">
-        <div id="hide"></div>
-    </dataTable>
+        <dataTable id="tableSerien" class="container col-8 py-5">
+            <div id="hide"></div>
+        </dataTable>
         
    
         
         <!-- JS from bootstrap -->
+        <script src="../js/src/searchSeries.js"></script>
+        <script src="../js/src/showSeries.js"></script>
+        <script>
+            showAllSeriesOfUserWithRating('Luca');
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 </html>
