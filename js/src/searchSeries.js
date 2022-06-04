@@ -1,5 +1,6 @@
-
-
+/**
+ *
+ */
 function serachSerie(){
 
     let user = window.sessionStorage.getItem("username");
@@ -17,7 +18,6 @@ function serachSerie(){
     };
 
     console.log(search);
-
 
     // Try to connect to the REST-interface
     fetch(url, {

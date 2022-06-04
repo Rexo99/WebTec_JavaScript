@@ -2,7 +2,7 @@
 function getRatingForSeries(title, ratings, rating){
     ratings.forEach(element => {
         console.log("Serie: " + title + "\nRating: " + element.ratedSeries);
-        if (element.ratedSeries == title){
+        if (element.ratedSeries === title){
             rating.score = element.score;
             rating.remark = element.remark;
         }
@@ -93,7 +93,17 @@ function showSeries(serien, ratings=null){
             }
         } 
 
+        // edit button
         const editButton = document.createElement("button");
+        /*
+        editButton.onclick(function(title, genre, numberOfSession, stremedBy){
+                window.localStorage.setItem("title", title);
+                window.localStorage.setItem("genre", genre);
+                window.localStorage.setItem("nOS", numberOfSession);
+                window.localStorage.setItem("streamedBy", stremedBy);
+                window.open('singelSerie.html', '_self');
+        });
+         */
         editButton.classList.add("btn");
         editButton.classList.add("btn-primary");
         editButton.classList.add("container");
@@ -106,6 +116,13 @@ function showSeries(serien, ratings=null){
         const element = document.getElementById("tableSerien");
         element.insertBefore(thead, hide);
     })
+
+    function goToEditPage(){
+        let title = document.getElementById("inputTitle")
+        let genre = serie.genre;
+        let provider = serie.streamedBy;
+        let numOfSeasons = serie.numberOfSeasons;
+    }
 
 }
 
