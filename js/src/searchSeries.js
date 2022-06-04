@@ -1,8 +1,8 @@
 
 
-function serachSerie(user){
-    console.log(user);
-    // Unfortunately, I do not know how this works with the registration.
+function serachSerie(){
+
+    let user = window.sessionStorage.getItem("username");
     let url = 'http://localhost:8080/steam/api/serien/' + user + '/search';
 
     let username = document.getElementById("username").value;
@@ -10,8 +10,8 @@ function serachSerie(user){
     let plattform = document.getElementById('inputPlattform').value;
     let score = document.getElementById('inputScore').value;
 
-    let search = {"username" : user,
-        "genre": genre
+    let search = {"username" : user
+        ,"genre": genre
         //,"provider": plattform
         //,"Score": score
     };
@@ -32,9 +32,14 @@ function serachSerie(user){
     })
         .then(response => response.json())
         .then(data => {
-            //window.location.assign('searchResult.html');
-            showSeries(data);
-            //document.getElementById("answer").innerHTML = 'REST answer: ' + data[0].title;
+            if(data.length === 0){
+                window.alert("Keine Serie gefunden");
+            } else {
+                // wenn das neue fenster geöffnet wird, werden die Such ergebnisse nicht korrekt angezeigt.
+                // window.location.assign('searchResult.html');
+                showSeries(data);
+            }
+
         })
         .catch(
             err => document.getElementById("answer").innerHTML = 'Fetch error ' + err
@@ -68,12 +73,12 @@ function showAllSeriesOfUserWithRating(){
                 })
                     .then(response => response.json())
                     .then(ratingData => {
-                        if (ratingData.length == 1){
+                        if (ratingData.length === 1){
                             console.log("befuelle ratings");
                             ratings.push(ratingData[0]);
                         }
                         score++;
-                        if (score == data.length){
+                        if (score === data.length){
                             console.log("ratings befuellt: " + ratings.length);
                             showSeries(data,ratings);
                         }

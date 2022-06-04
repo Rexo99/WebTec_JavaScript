@@ -11,7 +11,6 @@ function getRatingForSeries(title, ratings, rating){
 
 function showSeries(serien, ratings=null){
 
-    // document.getElementById("test").innerHTML = "Hallöchen";
     serien.forEach(serie => {
         let title = serie.title;
         let genre = serie.genre;
@@ -20,9 +19,11 @@ function showSeries(serien, ratings=null){
 
         const thead = document.createElement("thead");
         thead.classList.add("py-2");
+        thead.classList.add("row");
 
         const th = document.createElement("th");
         th.classList.add("py-2");
+        th.classList.add("container");
         thead.appendChild(th);
 
         const divCard = document.createElement("div");
