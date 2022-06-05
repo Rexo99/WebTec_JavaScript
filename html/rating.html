@@ -24,12 +24,14 @@
     </nav>
 
     <div class="container py-5">
-        <form class="row g-3" action="createRating(loginBean.username)">
+        <form class="row g-3" >
             <!-- aktuelle Serie bekommen -->
             <div class="col-md-6">
-                <label class="form-label">Series: "#{createRatingBean.series.title}"</label> <br/>
+                <label class="form-label">Series: </label> <br/>
             </div>
-            getRemark()
+            <div class="col-md-6">
+                <textarea id="inputRemark"></textarea>
+            </div>
             <div class="col-md-6">
                 <label for="inputScore" class="form-label">Score</label>
                 <select class="form-select" id="inputScore" aria-label="input Genre">
