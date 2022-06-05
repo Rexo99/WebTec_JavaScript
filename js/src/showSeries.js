@@ -10,7 +10,7 @@ function getRatingForSeries(title, ratings, rating){
 }
 
 function showSeries(serien, ratings=null){
-
+    let counter = 0;
     serien.forEach(serie => {
         let title = serie.title;
         let genre = serie.genre;
@@ -95,15 +95,18 @@ function showSeries(serien, ratings=null){
 
         // edit button
         const editButton = document.createElement("button");
-        /*
-        editButton.onclick(function(title, genre, numberOfSession, stremedBy){
+        editButton.setAttribute('id', 'editButton' + counter)
+
+        // Es sollen in den localen Storage jeweils die Daten reingeschrieben werden, die ich auf der nächsten Seite brauche.
+        // Leider kann ich sie auf der nächsten Seite nicht so Abrufen, wie ich das gerne hätte.
+        editButton.addEventListener("click", function(click) {
                 window.localStorage.setItem("title", title);
-                window.localStorage.setItem("genre", genre);
-                window.localStorage.setItem("nOS", numberOfSession);
-                window.localStorage.setItem("streamedBy", stremedBy);
+                window.localStorage.setItem("genre",genre);
+                window.localStorage.setItem("nOS", numOfSeasons);
+                window.localStorage.setItem("streamedBy", provider);
                 window.open('singelSerie.html', '_self');
         });
-         */
+
         editButton.classList.add("btn");
         editButton.classList.add("btn-primary");
         editButton.classList.add("container");
@@ -115,14 +118,8 @@ function showSeries(serien, ratings=null){
         const hide = document.getElementById("hide");
         const element = document.getElementById("tableSerien");
         element.insertBefore(thead, hide);
+
+        counter = counter + 1;
     })
 
-    function goToEditPage(){
-        let title = document.getElementById("inputTitle")
-        let genre = serie.genre;
-        let provider = serie.streamedBy;
-        let numOfSeasons = serie.numberOfSeasons;
-    }
-
 }
-

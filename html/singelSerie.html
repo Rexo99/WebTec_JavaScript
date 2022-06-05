@@ -18,10 +18,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./AdvancedSearch.xhtml">Erweiterte Suche</a>
+                            <a class="nav-link active" aria-current="page" href="./AdvancedSearch.html">Erweiterte Suche</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./createSeries.xhtml">Serie erstellen</a>
+                            <a class="nav-link active" aria-current="page" href="./createSeries.html">Serie erstellen</a>
                         </li>
                     </ul>
                     <form class="d-flex" method="get" action="../index.html">
@@ -37,21 +37,20 @@
                 
                 <!-- Title -->
                 <div class="col-md-6">
-                    <lable for="inputTitle" class="form-label">Title: </lable>
-                    <input type="text" class="form-control" id="inputTitle" value="Title">
+                    <lable for="inputTitleSingleSerie" class="form-label">Title: </lable>
+                    <input type="text" class="form-control" id="inputTitleSingleSerie" value="Title">
                 </div>
                 
                 <!-- numberOfSeasons -->
                 <div class="col-md-6">
-                    <lable for="inputNumberOfSeasons" class="form-label">Number Of Seasons: </lable>
-                    <input type="number" id="inputNumberOfSeasons" class="form-control" value="0">
+                    <lable for="inputNumberOfSeasonsSingleSerie" class="form-label">Number Of Seasons: </lable>
+                    <input type="number" id="inputNumberOfSeasonsSingleSerie" class="form-control" value="0">
                 </div>
                 
                 <!-- genre -->
                 <div class="col-md-6">
-                    <label for="inputGenre" class="form-label"></label>
-                    <select class="form-select" id="inputGenre" aria-label="input Genre" required>
-                        <option selected>Select Genre</option>
+                    <label for="inputGenreSingleSerie" class="form-label">Genre</label>
+                    <select class="form-select" id="inputGenreSingleSerie" aria-label="input Genre">
                         <option value="Action">Action</option>
                         <option value="Drama">Drama</option>
                         <option value="Comedy">Comedy</option>
@@ -63,9 +62,8 @@
 
                 <!-- streamedBy -->
                 <div class="col-md-6">
-                    <label for="inputPlattform" class="form-label">Plattform</label>
-                    <select class="form-select" id="inputPlattform" aria-label="input Plattform" required>
-                        <option selected>Select Plattform</option>
+                    <label for="inputPlattformSingleSerie" class="form-label">Plattform</label>
+                    <select class="form-select" id="inputPlattformSingleSerie" aria-label="input Plattform">
                         <option value="Netflix">Netflix</option>
                         <option value="AmazonPrime">Amazon Prime</option>
                         <option value="DisneyPlus">Disney Plus</option>
@@ -83,11 +81,13 @@
 
                     <!-- go back -->
                     <div class="py-2">
-                        <a class="btn-primary btn" href="searchResult.html">Back</a>
+                        <a class="btn-primary btn" href="home.html">Back</a>
                     </div>
                 </div>
             </form>
         </div>
         <script src="../js/src/account.js"></script>
+        <script src="../js/src/editSerie.js"></script>
+        <script>fillSiteWithData()</script>
     </body>
 </html>
