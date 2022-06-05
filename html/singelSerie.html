@@ -33,59 +33,58 @@
         
         <!-- Serie -->
         <div class="container py-5">
-            <form class="row g-3" type="post" action="machwas()">
-                
-                <!-- Title -->
-                <div class="col-md-6">
-                    <lable for="inputTitleSingleSerie" class="form-label">Title: </lable>
-                    <input type="text" class="form-control" id="inputTitleSingleSerie" value="Title">
-                </div>
-                
-                <!-- numberOfSeasons -->
-                <div class="col-md-6">
-                    <lable for="inputNumberOfSeasonsSingleSerie" class="form-label">Number Of Seasons: </lable>
-                    <input type="number" id="inputNumberOfSeasonsSingleSerie" class="form-control" value="0">
-                </div>
-                
-                <!-- genre -->
-                <div class="col-md-6">
-                    <label for="inputGenreSingleSerie" class="form-label">Genre</label>
-                    <select class="form-select" id="inputGenreSingleSerie" aria-label="input Genre">
-                        <option value="Action">Action</option>
-                        <option value="Drama">Drama</option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Thriller">Thriller</option>
-                        <option value="Documentary">Documentary</option>
-                        <option value="ScienceFiction">Science Fiction</option>
-                    </select>
+
+            <!-- Title -->
+            <div class="col-md-6">
+                <lable for="inputTitleSingleSerie" class="form-label">Title: </lable>
+                <input type="text" class="form-control" id="inputTitleSingleSerie" value="Title" readonly>
+            </div>
+
+            <!-- numberOfSeasons -->
+            <div class="col-md-6">
+                <lable for="inputNumberOfSeasonsSingleSerie" class="form-label">Number Of Seasons: </lable>
+                <input type="number" id="inputNumberOfSeasonsSingleSerie" class="form-control" value="0">
+            </div>
+
+            <!-- genre -->
+            <div class="col-md-6">
+                <label for="inputGenreSingleSerie" class="form-label">Genre</label>
+                <select class="form-select" id="inputGenreSingleSerie" aria-label="input Genre">
+                    <option value="Action">Action</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="ScienceFiction">Science Fiction</option>
+                </select>
+            </div>
+
+            <!-- streamedBy -->
+            <div class="col-md-6">
+                <label for="inputPlattformSingleSerie" class="form-label">Plattform</label>
+                <select class="form-select" id="inputPlattformSingleSerie" aria-label="input Plattform">
+                    <option value="Netflix">Netflix</option>
+                    <option value="AmazonPrime">Amazon Prime</option>
+                    <option value="DisneyPlus">Disney Plus</option>
+                    <option value="Sky">Sky</option>
+                </select>
+            </div>
+
+
+            <div class="col-md-6">
+
+                <!-- Save -->
+                <div class="py-2">
+                    <button onclick="editSerie()" type="submit" class="btn-primary btn">Save</button>
                 </div>
 
-                <!-- streamedBy -->
-                <div class="col-md-6">
-                    <label for="inputPlattformSingleSerie" class="form-label">Plattform</label>
-                    <select class="form-select" id="inputPlattformSingleSerie" aria-label="input Plattform">
-                        <option value="Netflix">Netflix</option>
-                        <option value="AmazonPrime">Amazon Prime</option>
-                        <option value="DisneyPlus">Disney Plus</option>
-                        <option value="Sky">Sky</option>
-                    </select>
+                <!-- go back -->
+                <div class="py-2">
+                    <a class="btn-primary btn" href="home.html">Back</a>
                 </div>
-
-                
-                <div class="col-md-6">
-
-                    <!-- Save -->
-                    <div class="py-2">
-                        <button onclick="editSerie()" type="submit" class="btn-primary btn">Save</button>
-                    </div>
-
-                    <!-- go back -->
-                    <div class="py-2">
-                        <a class="btn-primary btn" href="home.html">Back</a>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
+        <p id="answerSingleSerie"></p>
         <script src="../js/src/account.js"></script>
         <script src="../js/src/editSerie.js"></script>
         <script>fillSiteWithData()</script>
