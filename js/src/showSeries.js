@@ -120,6 +120,25 @@ function showSeries(serien, ratings=null){
         element.insertBefore(thead, hide);
 
         counter = counter + 1;
+
+        // rate button
+        const rateButton = document.createElement("button");
+        rateButton.setAttribute("id","rateButton" + counter)
+        rateButton.addEventListener("click",function (click) {
+            window.localStorage.setItem("title",title);
+            // was macht der zweite Parameter _self?
+            window.open("rating.html","_self")
+        });
+
+        rateButton.classList.add("btn");
+        rateButton.classList.add("btn-primary");
+        rateButton.classList.add("container");
+        rateButton.classList.add("col-3");
+
+        divCardBody.appendChild(rateButton);
+        const RateButtonText = document.createTextNode("Rate");
+        rateButton.appendChild(RateButtonText);
+
     })
 
 }
