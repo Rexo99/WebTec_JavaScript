@@ -97,8 +97,7 @@ function showSeries(serien, ratings=null){
         const editButton = document.createElement("button");
         editButton.setAttribute('id', 'editButton' + counter)
 
-        // Es sollen in den localen Storage jeweils die Daten reingeschrieben werden, die ich auf der nächsten Seite brauche.
-        // Leider kann ich sie auf der nächsten Seite nicht so Abrufen, wie ich das gerne hätte.
+
         editButton.addEventListener("click", function(click) {
                 window.localStorage.setItem("title", title);
                 window.localStorage.setItem("genre",genre);

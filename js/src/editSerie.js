@@ -7,7 +7,6 @@ function editSerie(){
     let numberOfSession = document.getElementById("inputNumberOfSeasonsSingleSerie").value;
     let streamedBy = document.getElementById("inputPlattformSingleSerie").value;
 
-
     // get username from seesionStorage
     let user = window.sessionStorage.getItem("username");
 
