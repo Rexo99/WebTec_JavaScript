@@ -20,7 +20,6 @@ function editSerie(){
         ,"title": title
     };
 
-
     // REST request
     fetch(url, {
         method: 'post',
