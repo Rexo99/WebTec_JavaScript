@@ -2,6 +2,8 @@ function createRating() {
     let user = window.sessionStorage.getItem("username");
 
     let ratedSeries = window.localStorage.getItem("title");
+    // refresh SeriesLabel
+    document.getElementById("seriesLabel").innerHTML = "Series: " + ratedSeries;
     localStorage.clear();
     let score = document.getElementById("inputScore").value;
     let remark = document.getElementById("inputRemark").value;
@@ -15,7 +17,7 @@ function createRating() {
     }
     console.log(rating);
 
-    let url = "http://localhost:8080/steam/api/serien/" + user + "/rate";
+    let url = "http://localhost:8080/steam/api/serien/" + user + "/rating";
 
     fetch(url, {
         method: "post",
@@ -26,7 +28,7 @@ function createRating() {
     })
         .then(response => response.text())
         .then(data => {
-            //window.location.assign("home.html")
+            window.location.assign("home.html")
         });
 
 }
